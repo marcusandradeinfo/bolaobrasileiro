@@ -14,135 +14,37 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
-  <header class="Cabecalho px-1">
-    <!-- As a heading -->
-    <div class="NavbarDesktop d-none d-lg-block">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Bolão Brasileiro 2025</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="regulamento.html">Regulamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Tabela Bolao</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Tabela Campeonato</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Criar Palpites</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Ver Palpites</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Financeiro</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <div class="NavBarMobile d-lg-none">
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid col-11">
-          <a class="navbar-brand" href="#">Bolão Brasileiro2025</a>
-          <h6 class="Usuario mb-0">Joao</h6>
-        </div>
-      </nav>
-    </div>
+  <header>
   </header>
-
-
-
-  <main class="Conteudo px-1">
-    <div id="container__conteudo__img" class="container text-center d-md-none d-md-block">
-      <div class="col-12">
-        <img class="img-fluid mt-3" src="assets\logo.png" alt="logo bolao" width="100%" height="30%">
+  <main>
+    <div id="container__conteudo__img" class="container text-center">
+      <div class="col-12 pt-5 px-3">
+        <img class="img-fluid" src="assets\logo.png" alt="logo bolao" width="100%" height="30%">
       </div>
     </div>
-
-    <div id="container__conteudo__cards__posicao" class="container text-center mt-5">
-      <div class="container row mx-auto g-4">
-        <div class="col-6 col-md-2">
-          <div class="card text-bg-primary mb-3">
-            <div class=" card-header">Posição</div>
-            <div class="card-body">
-              <h5 class="card-title">1º</h5>
+    <div class="container text-center py-5">
+        <div class="row">
+            <div class="row g-2 px-5">
+            <form>
+            <div class="col-12 pt-3">
+                <input type="text" class="form-control" placeholder="E-mail" aria-label="file example" required>
             </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-2">
-          <div class="card text-bg-danger mb-3">
-            <div class=" card-header">Pontos</div>
-            <div class="card-body">
-              <h5 class="card-title">40</h5>
+            <div class="col-12 pt-3">
+                <input type="password" class="form-control" placeholder="Senha" aria-label="file example" required>
             </div>
-          </div>
+            <div class="col-12 pt-3">
+              <a href="principal.html" class="btn btn-primary  w-100">Login</a>
+            </div>
+            <div class="col-12 pt-3">
+                <a href="cadastro.html" class="btn btn-primary  w-100">Cadastrar</a>
+            </div>
+            </form>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <!-- <div class="Teste col-12 d-none d-md-block">
-      <h3>Regulamento</h3>
-    </div> -->
-
-
-    <section class="menu">
-      <div class="container mb-3" >
-        <div class="row g-2">
-          <!-- <div class="col-12">
-            <h3>Regulamento</h3>
-          </div> -->
-          <hr class="border border-secondary-subtle border-1 mt-3 mb-0">
-          <div class="col-12">
-            <h6 class="titulo_tabelas text-light">Tabelas</h6>
-          </div>
-          
-          <div class="col-6">
-            <a href="tabela_bolao.html" class="btn btn-primary w-100">Tabela Bolao</a>
-          </div>
-          <div class="col-6">
-            <a href="tabela_brasileiro.html" class="btn btn-primary w-100">Tabela Campeonato</a>
-          </div>
-          <div class="col-12">
-            <h6 class="titulo_palpites text-light">Palpites</h6>
-          </div>
-          <div class="col-6">
-            <a href="criar_palpites.html" class="btn btn-primary w-100">Criar Palpites</a>
-          </div>
-          <div class="col-6">
-            <a href="ver_palpites.html" class="btn btn-primary w-100">Ver Palpites</a>
-          </div>
-          <!-- <div class="col-12">
-            <h3>Financeiro</h3>
-          </div> -->
-          <div class="col-12 pt-4">
-            <a href="pagarbolao.html" class="btn btn-primary  w-100">Pagar Bolão</a>
-          </div>
-          <hr class="border border-secondary-subtle border-1 mt-3 mb-0">
-          <div class="col-12 pt-3">
-            <a href="regulamento.html" id="btn-regulamento" class="btn btn-light w-100">Regulamento</a>
-          </div>
-          <div class="col-12 pt-3">
-            <a href="" class="btn btn-danger  w-100">Sair</a>
-          </div>
-        </div>
-    </section>
   </main>
   <footer class="text-center w-100 h-100">
     <h6 class="text-light">Desenvovido por Marcus Andrade Info</h6>
   </footer>
+</body>
 
 </html>
