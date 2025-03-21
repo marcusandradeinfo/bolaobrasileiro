@@ -16,47 +16,63 @@
     crossorigin="anonymous"></script>
   <header>
     <!-- As a heading -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bolão Brasileiro 2025</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Regulamento</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tabela Bolao</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tabela Campeonato</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Criar Palpites</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Ver Palpites</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Financeiro</a>
-            </li>
-          </ul>
+    <header class="Cabecalho px-1">
+      <!-- As a heading -->
+      <div class="NavbarDesktop d-none d-lg-block">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bolão Brasileiro 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="regulamento.html">Regulamento</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tabela Bolao</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tabela Campeonato</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Criar Palpites</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ver Palpites</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Financeiro</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+  
+      <div class="NavBarMobile d-lg-none">
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid col-11">
+            <a class="navbar-brand" href="#">Bolão Brasileiro2025</a>
+            <h6 class="Usuario mb-0">Joao</h6>
+          </div>
+        </nav>
+      </div>
+    </header>
+  
+  
+  
+    <main class="Conteudo px-1">
+      <div id="container__conteudo__img" class="container text-center d-md-none d-md-block">
+        <div class="col-12">
+          <img class="img-fluid" src="assets\logo.png" alt="logo bolao" width="100%" height="30%">
         </div>
       </div>
-    </nav>
-  </header>
-  <main>
-    <div id="container__conteudo__img" class="container text-center">
-      <div class="col-12">
-        <img class="img-fluid" src="assets\logo.png" alt="logo bolao" width="100%" height="30%">
-      </div>
-    </div>
     <section class="menu">
       <div class="container mb-3">
         <div class="row g-2">
@@ -152,8 +168,8 @@
         </div>
     </section>
   </main>
-  <footer class="text-center bg-secondary">
-    <h4>desenvovido por</h4>
+  <footer class="text-center bg-secondary w-100 h-100">
+    <h6>desenvovido por</h6>
   </footer>
 </body>
 
