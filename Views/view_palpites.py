@@ -21,7 +21,7 @@ def enviarpalpite():
         if form.validate_on_submit():
             palpite_usuario = []
             usuario_palpite = session['users']
-            palpite_usuario.append(usuario_palpite)
+            #palpite_usuario.append(usuario_palpite)
             
             i = 1
             for i in range(1, 21):
@@ -34,7 +34,7 @@ def enviarpalpite():
             palpite_usuario = tuple(palpite_usuario)
             
             a = FuncoesBancoDados()
-            a.CadastrarPalpites(palpite_usuario)
+            a.CadastrarPalpites(palpite_usuario,usuario_palpite)
             return redirect(url_for('principal'))
 
 

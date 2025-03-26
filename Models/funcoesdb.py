@@ -1,4 +1,4 @@
-import psycopg2
+import mysql.connector
 
 class FuncoesBancoDados:
     def __init__(self):
@@ -14,15 +14,15 @@ class FuncoesBancoDados:
         ##porta - 5432
 
         # Configuração da conexão
-        DB_HOST = "localhost"   # ou o IP do servidor PostgreSQL
-        DB_PORT = "5432"        # porta padrão do PostgreSQL
-        DB_NAME = "BolaoBrasileiro"   # nome do banco de dados
-        DB_USER = "postgres" # usuário do banco
-        DB_PASS = ""   # senha do banco
+        DB_HOST = "dbbolaobrasil.mysql.dbaas.com.br"   # ou o IP do servidor PostgreSQL
+        DB_PORT = "3306"        # porta padrão do PostgreSQL
+        DB_NAME = "dbbolaobrasil"   # nome do banco de dados
+        DB_USER = "dbbolaobrasil" # usuário do banco
+        DB_PASS = "M@TRixzh0015"   # senha do banco
 
         try:
             # Conectar ao banco
-            conn = psycopg2.connect(
+            conn = mysql.connector.connect(
                 host=DB_HOST,
                 port=DB_PORT,
                 database=DB_NAME,
@@ -33,8 +33,9 @@ class FuncoesBancoDados:
             cursor = conn.cursor()
             return conn, cursor
 
-        except psycopg2.Error as e:
+        except mysql.connector.Error as e:
             print("Erro ao conectar ao PostgreSQL:", e)
+
 
     def AtualizarTabelaBrasileiro(self,time,pts,jogos,vitorias,saldo,pos):
         conexao,cursor = self.ConexaoDB()
@@ -54,8 +55,8 @@ class FuncoesBancoDados:
         conexao.close()
         return result
     
-    def CadastrarPalpites(self,palpites):   
-        sql = f"INSERT INTO tb_palpite (usuario, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20) VALUES {palpites}"
+    def CadastrarPalpites(self,palpites,usuario):   
+        sql = f"UPDATE tb_palpite SET pos1 = '{palpites[0]}', pos2 = '{palpites[1]}',pos3 = '{palpites[2]}', pos4 = '{palpites[3]}', pos5 = '{palpites[4]}', pos6 = '{palpites[5]}', pos7 = '{palpites[6]}', pos8 = '{palpites[7]}', pos9 = '{palpites[8]}', pos10 = '{palpites[9]}', pos11 = '{palpites[10]}', pos12 = '{palpites[11]}', pos13 = '{palpites[12]}', pos14 = '{palpites[13]}', pos15 = '{palpites[14]}', pos16 = '{palpites[15]}', pos17 = '{palpites[16]}', pos18 = '{palpites[17]}', pos19 = '{palpites[18]}', pos20 = '{palpites[19]}' WHERE usuario = '{usuario}'"
         conexao, cursor = self.ConexaoDB()
         cursor.execute(sql,)  # Aqui está o ajuste
         conexao.commit()
