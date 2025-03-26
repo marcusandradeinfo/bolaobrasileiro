@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="menu">
+      <div class="container mb-3">
+        <div class="row g-2">
+          <div class="col-12 pt-3 titulo_tabelas text-light text-center">
+            <h6>Tabela Brasileiro 2025</h6>
+          </div>
+          <hr class="border border-secondary-subtle border-1 mt-0 mb-0">
+          <div class="col-12 pt-4">
+            <table class="table table-striped table-hover w-100">
+              <thead>
+                <tr>
+                  <th scope="col">Posição</th>
+                  <th scope="col">Clube</th>
+                  <th scope="col">Pontos</th>
+                  <th scope="col">Jogos</th>
+                  <th scope="col">V</th>
+                  <th scope="col">SG</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for pos, time, pts, j, v, sg in zip(tb_brasileiro.POS, tb_brasileiro.Time, tb_brasileiro.PTS, tb_brasileiro.J, tb_brasileiro.V, tb_brasileiro.SG) %}
+                  <th scope="row">{{ pos }}</th>
+                  <td>{{ time }}</td>
+                  <td>{{ pts }}</td>
+                  <td>{{ j }}</td>
+                  <td>{{ v }}</td>
+                  <td>{{ sg }}</td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="col-12">
+            <a href="principal" class="btn btn-danger  w-100">Voltar</a>
+          </div>
+        </div>
+    </section>
+  </main>
+  {% endblock %}

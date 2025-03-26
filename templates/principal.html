@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="container__conteudo__cards__posicao" class="container text-center mt-5">
+      <div class="container row mx-auto g-4">
+        <div>
+        <h6 class="Usuario mb-0 text-light">Olá {{ user }}</h6>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="card text-bg-primary mb-3">
+            <div class=" card-header">Posição</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ posicao }}º</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="card text-bg-danger mb-3">
+            <div class=" card-header">Pontos</div>
+            <div class="card-body">
+              <h5 class="card-title">{{pts}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="Teste col-12 d-none d-md-block">
+      <h3>Regulamento</h3>
+    </div> -->
+
+
+    <section class="menu">
+      <div class="container mb-3" >
+        <div class="row g-2">
+          <!-- <div class="col-12">
+            <h3>Regulamento</h3>
+          </div> -->
+          <hr class="border border-secondary-subtle border-1 mt-3 mb-0">
+          <div class="col-12">
+            <h6 class="titulo_tabelas text-light">Tabelas</h6>
+          </div>
+          
+          <div class="col-6">
+            <a href="tabela_bolao" class="btn btn-primary w-100">Tabela Bolao</a>
+          </div>
+          <div class="col-6">
+            <a href="tabela_brasileiro" class="btn btn-primary w-100">Tabela Campeonato</a>
+          </div>
+          <div class="col-12">
+            <h6 class="titulo_palpites text-light">Palpites</h6>
+          </div>
+          <div class="col-6">
+            <a href="criar_palpites" class="btn btn-primary w-100" disable>
+              Criar Palpites
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="ver_palpites" class="btn btn-primary w-100">Ver Palpites</a>
+          </div>
+          <!-- <div class="col-12">
+            <h3>Financeiro</h3>
+          </div> -->
+          <div class="col-12 pt-4">
+            <a href="pagarbolao" class="btn btn-primary  w-100">Pagar Bolão</a>
+          </div>
+          <hr class="border border-secondary-subtle border-1 mt-3 mb-0">
+          <div class="col-12 pt-3">
+            <a href="regulamento" id="btn-regulamento" class="btn btn-light w-100">Regulamento</a>
+          </div>
+          <div class="col-12 pt-3">
+            <a href="sair" class="btn btn-danger  w-100">Sair</a>
+          </div>
+        </div>
+    </section>
+{% endblock %}

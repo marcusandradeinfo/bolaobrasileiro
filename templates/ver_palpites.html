@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="menu">
+      <div class="container mb-3">
+        <div class="row g-2">
+          <div class="col-12 pt-3 titulo_tabelas text-light text-center">
+            <h6>Palpites Participantes</h6>
+          </div>
+          <hr class="border border-secondary-subtle border-1 mt-0 mb-0">
+          <div class="col-12">
+            <form action="checarpalpites" method="post">
+              {{ form.csrf_token() }}
+              <div class="mb-3">
+                <select class="form-select" aria-label="Paticipante" name="participante" onchange="this.form.submit()">
+                  <option selected >Selecione o Participante</option>
+                  {% for participantes in usuariosbolao.Usuario %}
+                  <option value="{{ participantes }}">{{participantes}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-12">
+                <table class="table table-striped table-hover w-100">
+                  <thead>
+                    <tr>
+                      <th scope="col">Posição</th>
+                      <th scope="col">Equipe</th>
+                      <th scope="col">Usuario</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for pos,times,usuario in zip(dados.POS, dados.Time, dados.Usuario) %}
+                    <tr>
+                      <th scope="row">{{ pos }}</th>
+                      <td>{{ times }}</td>
+                      <td>{{ usuario }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- <div class="col-12">
+                <a href="" class="btn btn-primary  w-100">Enviar</a>
+              </div> -->
+            </form>
+        </div>
+          <div class="col-12">
+            <a href="principal" class="btn btn-danger  w-100">Voltar</a>
+          </div>
+        </div>
+    </section>
+  </main>
+
+{% endblock %}

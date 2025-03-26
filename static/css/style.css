@@ -1,0 +1,58 @@
+
+.img-fluid{
+    border: 1px solid;
+    border-color: #ffffff;
+}
+
+.corpo{
+
+    background: #01242b;
+}
+
+.card-header{
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+}
+.card{
+    border: 2px solid;
+}
+.card-body{
+    background: #01242b;
+}
+
+.btn-primary{
+    background-color: #2C7483;
+    color: white;
+    border: none;
+}
+
+.btn-light{
+    background-color: #90CCD8;
+    color: black;
+    border: none;
+}
+
+
+
+/* .apresentation{
+    display: flex;
+    justify-content: center;
+    padding: 5% 0%;
+
+}
+
+.img-fluid{
+    width: 50%;
+    height: auto;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0% 25%;
+} */

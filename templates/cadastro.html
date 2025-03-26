@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="menu">
+      <div class="container mb-3">
+        <div class="row g-2">
+          {% with messages = get_flashed_messages(with_categories=True) %}
+              {% if messages %}
+                  {% for category, message in messages %}
+                      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                          {{ message }}
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                  {% endfor %}
+              {% endif %}
+          {% endwith %}
+          <div class="col-12 pt-3 titulo_tabelas text-light text-center">
+            <h6>Cadastro Usuário</h6>
+          </div>
+          <hr class="border border-secondary-subtle border-1 mt-0 mb-0">
+          <div class="col-12">
+            <form action="cadastrar" method="POST">
+              <div class="mb-3">
+                {{ form.csrf_token() }}
+                {{ form.nome.label(class="form-label titulo_tabelas text-light text-center") }}
+                {{ form.nome(class="form-control") }}
+                <!-- <label for="exampleFormControlInput1" class="form-label titulo_tabelas text-light text-center">Nome</label>
+                <input class="form-control" type="text" name="nome" placeholder="Digite seu Nome" aria-label="default input example" maxlength="30" minlength="15"> -->
+              </div>
+              <div class="mb-3">
+                {{ form.cpf.label(class="form-label titulo_tabelas text-light text-center") }}
+                {{ form.cpf(class="form-control") }}
+                <!-- <label for="exampleFormControlInput1" class="form-label titulo_tabelas text-light text-center">CPF</label>
+                <input class="form-control" type="text" name="cpf" placeholder="Digite seu CPF" aria-label="default input example"> -->
+              </div>
+              <div class="mb-3">
+                {{ form.email.label(class="form-label titulo_tabelas text-light text-center") }}
+                {{ form.email(class="form-control") }}
+                <!-- <label for="exampleFormControlInput1" class="form-label titulo_tabelas text-light text-center">E-mail</label>
+                <input class="form-control" type="text" name="email" placeholder="Digite seu e-mail" aria-label="default input example"> -->
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label titulo_tabelas text-light text-center">Data de Nascimento</label>
+                <input class="form-control" type="date" name="data_nacimento" placeholder="Data de Nascimento" aria-label="default input example" required>
+              </div>
+              <div class="mb-3">
+                {{ form.senha.label(class="form-label titulo_tabelas text-light text-center") }}
+                {{ form.senha(class="form-control") }}
+                <!-- <label for="exampleFormControlInput1" class="form-label titulo_tabelas text-light text-center">Senha</label>
+                <input class="form-control" type="password" name="senha" placeholder="Digite uma Senha" aria-label="default input example"> -->
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label titulo_tabelas text-light text-center">Leia o regulamento abaixo antes de confirmar sua participação</label>
+                <textarea class="form-control" style="min-height: 150px;" name="regulamento" aria-label="default input example"readonly>
+                {{ texto_regulamento | safe }}
+                </textarea>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="aceito_termo" value="" id="flexCheckDefault" required>
+                <label class="form-check-label titulo_tabelas text-light text-center" for="flexCheckDefault">
+                  Li e estou de acordo com o regulamento do bolão.
+                </label>
+              </div>
+              <div class="col-12">
+                {{ form.cadastrar(class="btn btn-primary w-100") }}
+                <!-- <button type="submit" class="btn btn-primary  w-100">Cadastrar</a> -->
+              </div>
+            </form>
+        </div>
+          <div class="col-12">
+            <a href="principal" class="btn btn-danger  w-100">Voltar</a>
+          </div>
+        </div>
+    </section>
+  </main>
+{% endblock %}

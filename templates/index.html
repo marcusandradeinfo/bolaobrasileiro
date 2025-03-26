@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% block content %}
+    
+    <div class="container text-center py-5">
+        <div class="row">
+            <div class="row g-2 px-5">
+                <!-- Exibir mensagens flash -->
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="{{ url_for('login') }}" method="POST">
+            {{ form.csrf_token() }}
+            <div class="col-12 pt-3">
+                {{ form.login.label(class="form-label titulo_tabelas text-light text-center") }}
+                {{ form.login(class="form-control") }}
+                <!-- <input type="text" name="usuario" class="form-control" placeholder="Usuario" aria-label="file example" required> -->
+            </div>
+            <div class="col-12 pt-3">
+                {{ form.senha.label(class="form-label titulo_tabelas text-light text-center") }}
+                {{ form.senha(class="form-control") }}
+                <!-- <input type="password" name="senha" class="form-control" placeholder="Senha" aria-label="file example" required> -->
+            </div>
+            <div class="col-12 pt-3">
+                {{form.entrar(class="btn btn-primary  w-100")}}
+              <!-- <button type="submit" class="btn btn-primary  w-100">Login</a> -->
+            </div>
+            <div class="col-12 pt-3">
+                <a href="cadastro" class="btn btn-primary  w-100">Cadastrar</a>
+            </div>
+            </form>
+            </div>
+        </div>
+
+{% endblock %}

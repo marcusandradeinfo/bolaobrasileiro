@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="menu">
+      <div class="container mb-3">
+        <div class="row g-2">
+          <div class="col-12 pt-3 titulo_tabelas text-light text-center">
+            <h6>PAGAMENTO DO BOLÃO</h6>
+          </div>
+          <hr class="border border-secondary-subtle border-1 mt-0 mb-0">
+          
+          <div class="col-12 pt-3 titulo_tabelas text-light text-center">
+            <h6>ENVIO DE COMPROVANTE</h6>
+          </div>
+          <div class="mb-3">
+            <form action="comprovante" method="post" enctype="multipart/form-data">
+            <input type="file" class="form-control" name="arquivo" aria-label="file example" required>
+            <div class="col-12 pt-3">
+              <button type="submit" class="btn btn-primary  w-100">Enviar Comprovante</button>
+            </div>
+            <div class="invalid-feedback">Clique aqui para anexar seu comprovante</div>
+          </form>
+
+
+
+          <div class="col-12 pt-4 titulo_tabelas text-light text-center">
+            <p>
+              PARA REALIZAR O PAGAMENTO:<br>
+
+              BASTA CLICAR EM COPIAR A CHAVE PIX PARA E REALIZAR O PIX.
+              <br>
+              <!-- <br>
+              <div class="col-12">
+                <img class="img-fluid mt-3" src="{{ url_for('static',filename='images/pix.png')}}" alt="logo bolao" width="50%" height="30%">
+              </div> -->
+              <form>
+                <input type="hidden" value="profmarcusandrade@gmail.com" id="textoCopiado">
+                <button type="button" onclick="copiarTexto()" class="btn btn-primary w-100 mt-3">Copiar Chave Pix</button>
+              </form>
+              
+              <script>
+                  function copiarTexto() {
+                      var texto = document.getElementById("textoCopiado");
+
+                      // Depuração: Verifique se o valor está correto
+                      console.log(texto.value); 
+
+                      // Tenta copiar o texto para a área de transferência
+                      navigator.clipboard.writeText(texto.value)
+                          .then(() => {
+                              alert("Texto copiado para a área de transferência!");
+                          })
+                          .catch((err) => {
+                              alert("Erro ao copiar texto: " + err);
+                          });
+                  }
+              </script>
+              <br>
+              <br>
+              APÓS O PAGAMENTO BASTA ANEXAR O COMPROVANTE NO FORMULÁRIO ACIMA E ENVIAR.<br><br>
+              
+              APÓS A COMPROVAÇÃO DO PAGAMENTO VOCÊ RECEBERÁ UM E-MAIL CONFIRMANDO A SUA PARTICIPAÇÃO.<br><br>
+
+              </p>
+
+          </div>
+         
+          <div class="col-12">
+            <a href="principal" class="btn btn-danger  w-100">Voltar</a>
+          </div>
+        </div>
+    </section>
+  </main>
+  {% endblock %}
